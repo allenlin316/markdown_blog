@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const articleRoute = require('./routes/articles');
 const Article = require('./models/article');
 require('dotenv').config();
-const PORT = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 console.clear();
 
@@ -22,6 +22,6 @@ app.get('/', async (req, res) => {
 
 app.use('/articles', articleRoute);
 
-app.listen(PORT, () => {
-    console.log(`successfully run at ${PORT}`);
+app.listen(port, () => {
+    console.log(`successfully run at ${port}`);
 })
